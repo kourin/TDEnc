@@ -96,7 +96,7 @@ if "%X264%"=="f" (
     .\curl.exe --connect-timeout 5 -f -o %X264_PATH% -L %X264_URL%
     echo;
 )
-if "%FFME%"=="f" (
+if "%FFMPEG%"=="f" (
     echo ^>^>FFmpeg
     .\curl.exe --connect-timeout 5 -f -o %FFMPEG_PATH% -L %FFMPEG_URL%
     echo;
