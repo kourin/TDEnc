@@ -95,13 +95,9 @@ rem 元の動画と同じのままなら空欄のままにしておく
 set DEFAULT_FPS=
 set TWITTER_FPS=30
 
-rem AACエンコーダの選択（NeroAacEncかQuickTimeか）
-rem neroかqt（QuickTimeがインストールされてる必要があります）かを選択
-set AAC_ENCODER=nero
-
-rem AACエンコードのプロファイル選択(hev2はAAC_ENCODER=neroの時のみ有効)
-rem auto、lc、he、hev2から選択(デフォルトのautoを推奨)
-set AAC_PROFILE=auto
+rem AACエンコーダの選択（ffmpegかQuickTimeか）
+rem ffmpegかqt（QuickTimeがインストールされてる必要があります）かを選択
+set AAC_ENCODER=ffmpeg
 
 rem 音声のサンプルレートの選択肢
 rem これは弄らないことを勧めます
