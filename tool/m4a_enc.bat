@@ -80,7 +80,7 @@ echo;
 if /i "%AAC_ENCODER%"=="nero" (
     .\neroAacEnc.exe %AAC% -2pass -br %A_BITRATE%000 -if %FINAL_WAV% -of %TEMP_M4A%
 ) else if /i "%AAC_ENCODER%"=="ffmpeg" (
-    .\ffmpeg,exe -vn -acodec aac -aq 320 %FINAL_WAV% %TEMP_M4A%
+    .\ffmpeg,exe -i %FINAL_WAV% -vn -acodec aac -aq 4 %TEMP_M4A%
 ) else if "%AAC%"=="-lc" (
     .\qtaacenc.exe --highest --cvbr %A_BITRATE% %FINAL_WAV% %TEMP_M4A%
 ) else (
