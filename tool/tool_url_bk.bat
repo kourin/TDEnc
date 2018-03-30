@@ -57,7 +57,7 @@ set WVI_PATH="..\Archives\wavi106.zip"
 set WVI_SIZE=24271
 
 set FFMPEG_VERSION=20180329-e5819fa
-set FFMPEG_URL="https://www.videohelp.com/download-MkHSRMBlpf/NeroAACCodec-1.5.4.zip"
+set FFMPEG_URL="https://ffmpeg.zeranoe.com/builds/win32/static/ffmpeg-%FFMPEG_VERSION%-win32-static.zip"
 set FFMPEG_PATH="..\Archives\ffmpeg-%FFMPEG_VERSION%-win32-static.zip"
 set FFMPEG_SIZE=48429797
 
