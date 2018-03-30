@@ -5,19 +5,19 @@ call "version.bat"
 set VER_URL="https://raw.githubusercontent.com/tdenc/TDEnc/master/tool/current_version"
 set VER_PATH=".\latest_version"
 
-set VER_URL2="https://raw.githubusercontent.com/kourin/TDEnc/master/tool/current_version2"
+set VER_URL2="https://raw.githubusercontent.com/kourin/TDEnc/1080p_30min/tool/current_version2"
 set VER_PATH2=".\latest_version2"
 
 set UPD_URL="https://github.com/tdenc/TDEnc/archive/master.zip"
 set UPD_PATH="..\Archives\update.zip"
 
-set UPD_URL2="https://github.com/kourin/TDEnc/archive/master.zip"
+set UPD_URL2="https://github.com/kourin/TDEnc/archive/1080p_30min.zip"
 set UPD_PATH2="..\Archives\update.zip"
 
 set LOG_URL="https://raw.githubusercontent.com/tdenc/TDEnc/master/tool/ChangeLog"
 set LOG_PATH=".\ChangeLog"
 
-set LOG_URL2="https://raw.githubusercontent.com/kourin/TDEnc/master/tool/ChangeLog"
+set LOG_URL2="https://raw.githubusercontent.com/kourin/TDEnc/1080p_30min/tool/ChangeLog"
 set LOG_PATH2=".\ChangeLog"
 
 set AVS_URL="https://raw.githubusercontent.com/tdenc/TDEnc/master/Archives/AviSynth_260.exe"
@@ -62,5 +62,5 @@ set FFMPEG_PATH="..\Archives\ffmpeg-%FFMPEG_VERSION%-win32-static.zip"
 set FFMPEG_SIZE=48429797
 
 set X264_VERSION=2901
-set X264_URL="https://raw.githubusercontent.com/kourin/TDEnc/master/Archives/x264.exe"
+set X264_URL="https://raw.githubusercontent.com/kourin/TDEnc/1080p_30min/Archives/x264.exe"
 set X264_PATH="..\Archives\x264.exe"

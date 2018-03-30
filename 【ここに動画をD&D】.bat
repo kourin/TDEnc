@@ -14,7 +14,7 @@ if "%ERRORLEVEL%"=="22" (
     copy /y curl-ca-bundle.bk.crt curl-ca-bundle.crt 1>nul 2>&1
 )
 rem .\curl.exe --connect-timeout 5 -f -o tool_url.bat -L "https://raw.githubusercontent.com/tdenc/TDEnc/master/tool/tool_url.bat" 2>nul
-.\curl.exe --connect-timeout 5 -f -o tool_url.bat -L "https://raw.githubusercontent.com/kourin/TDEnc/master/tool/tool_url.bat" 2>nul
+.\curl.exe --connect-timeout 5 -f -o tool_url.bat -L "https://raw.githubusercontent.com/kourin/TDEnc/1080p_30min/tool/tool_url.bat" 2>nul
 if "%ERRORLEVEL%"=="22" (
     set URL_PATH=".\tool_url_bk.bat"
 ) else (
