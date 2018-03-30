@@ -5,11 +5,20 @@ call "version.bat"
 set VER_URL="https://raw.githubusercontent.com/tdenc/TDEnc/master/tool/current_version"
 set VER_PATH=".\latest_version"
 
+set VER_URL2="https://raw.githubusercontent.com/kourin/TDEnc/master/tool/current_version2"
+set VER_PATH2=".\latest_version2"
+
 set UPD_URL="https://github.com/tdenc/TDEnc/archive/master.zip"
 set UPD_PATH="..\Archives\update.zip"
 
+set UPD_URL2="https://github.com/kourin/TDEnc/archive/master.zip"
+set UPD_PATH2="..\Archives\update.zip"
+
 set LOG_URL="https://raw.githubusercontent.com/tdenc/TDEnc/master/tool/ChangeLog"
 set LOG_PATH=".\ChangeLog"
+
+set LOG_URL2="https://raw.githubusercontent.com/kourin/TDEnc/master/tool/ChangeLog"
+set LOG_PATH2=".\ChangeLog"
 
 set AVS_URL="https://raw.githubusercontent.com/tdenc/TDEnc/master/Archives/AviSynth_260.exe"
 set AVS_PATH="..\Archives\AviSynth_260.exe"
@@ -47,10 +56,11 @@ set WVI_URL="https://raw.githubusercontent.com/tdenc/TDEnc/master/Archives/wavi1
 set WVI_PATH="..\Archives\wavi106.zip"
 set WVI_SIZE=24271
 
-set NERO_URL="http://ftp6.nero.com/tools/NeroAACCodec-1.5.1.zip"
-set NERO_PATH="..\Archives\NeroAACCodec-1.5.1.zip"
-set NERO_SIZE=2050564
+set FFMPEG_VERSION=20180329-e5819fa
+set FFMPEG_URL="https://www.videohelp.com/download-MkHSRMBlpf/NeroAACCodec-1.5.4.zip"
+set FFMPEG_PATH="..\Archives\ffmpeg-%FFMPEG_VERSION%-win32-static.zip"
+set FFMPEG_SIZE=48429797
 
-set X264_VERSION=2721
-set X264_URL="https://raw.githubusercontent.com/tdenc/TDEnc/master/Archives/x264.exe"
+set X264_VERSION=2901
+set X264_URL="https://raw.githubusercontent.com/kourin/TDEnc/master/Archives/x264.exe"
 set X264_PATH="..\Archives\x264.exe"

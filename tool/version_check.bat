@@ -18,8 +18,25 @@ if "%ERRORLEVEL%"=="22" (
 for /f "delims=" %%i in (current_version) do set C_VERSION=%%i
 if not exist latest_version goto :eof
 for /f "delims=" %%i in (latest_version) do set L_VERSION=%%i
-if "%C_VERSION%"=="%L_VERSION%" goto :eof
+if not "%C_VERSION%"=="%L_VERSION%" goto mado_ver
 
+date /t>nul
+.\curl.exe --connect-timeout 5 -f -o %VER_PATH2% -L %VER_URL2% 2>nul
+if "%ERRORLEVEL%"=="22" (
+    echo;
+    echo ^>^>%VER_CHECK_ERROR%
+    echo;
+    exit /b
+)
+for /f "delims=" %%i in (current_version2) do set C_VERSION2=%%i
+if not exist latest_version goto :eof
+for /f "delims=" %%i in (latest_version2) do set L_VERSION2=%%i
+if "%C_VERSION2%"=="%L_VERSION2%" goto :eof
+set LOG_PATH=%LOG_PATH2%
+set LOG_URL=%LOG_URL2%
+set L_VERSION=%L_VERSION2%
+
+:mado_ver
 .\curl.exe --connect-timeout 5 -f -o %LOG_PATH% -L %LOG_URL% 2>nul
 echo;
 echo ^>^>%VER_CHECK_NEW1%^(%L_VERSION%^)

@@ -14,35 +14,11 @@ if not exist %TEMP_WAV% goto wav_not_exist
 )> %AUDIO_AVS%
 
 rem 音声エンコード
-if /i "%AAC_PROFILE%"=="auto" (
-    if %A_BITRATE% LEQ 32 (
-        if "%AUDIO_CHANNELS%"=="2" (
-            set AAC=-hev2
-        ) else (
-            set AAC=-he
-        )
-    ) else if %A_BITRATE% LEQ 96 (
-        set AAC=-he
-    ) else (
-        set AAC=-lc
-    )
-) else if /i "%AAC_PROFILE%"=="he" (
-    set AAC=-he
-) else if /i "%AAC_PROFILE%"=="hev2" (
-    if "%AUDIO_CHANNELS%"=="2" (
-        set AAC=-hev2
-    ) else (
-        set AAC=-he
-    )
-) else (
-    set AAC=-lc
-)
-
 if /i "%A_SYNC%"=="n" (
     .\avs2pipe_gcc.exe audio %AUDIO_AVS% > %FINAL_WAV%
     goto m4a_encode
 )
-if /i "%A_SYNC%"=="y" goto auto_sync
+rem if /i "%A_SYNC%"=="y" goto auto_sync
 
 set M4A_LAG=%A_SYNC%
 goto wav_avs
@@ -103,6 +79,8 @@ echo ^>^>%M4A_ENC_ANNOUNCE%
 echo;
 if /i "%AAC_ENCODER%"=="nero" (
     .\neroAacEnc.exe %AAC% -2pass -br %A_BITRATE%000 -if %FINAL_WAV% -of %TEMP_M4A%
+) else if /i "%AAC_ENCODER%"=="ffmpeg" (
+    .\ffmpeg,exe -vn -acodec aac -aq 320 %FINAL_WAV% %TEMP_M4A%
 ) else if "%AAC%"=="-lc" (
     .\qtaacenc.exe --highest --cvbr %A_BITRATE% %FINAL_WAV% %TEMP_M4A%
 ) else (
@@ -114,8 +92,8 @@ echo;
 if not exist %TEMP_M4A% (
     echo ^>^>%WAV_ERROR%
     echo;
-    .\silence.exe %FINAL_WAV% -l 0.1 -c 2 -s 44100 -b 16
-    .\neroAacEnc.exe -lc -br 0 -if %FINAL_WAV% -of %TEMP_M4A%
+    copy /y mute.m4a %TEMP_DIR%\audio.m4a 1>nul 2>&1
+    set /a TEMP_M4A_BITRATE=4
 )
 echo ^>^>%M4A_SUCCESS%
 echo;
